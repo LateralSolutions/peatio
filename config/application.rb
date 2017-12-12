@@ -19,16 +19,16 @@ module Peatio
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Perth'
 
     config.i18n.enforce_available_locales = false
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{yml}')]
-    config.i18n.available_locales = ['en', 'zh-CN', 'ko']
+    config.i18n.available_locales = ['en', 'sg', 'hr']
 
     config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/extras)
-
+    #config.eager_load_paths += ["#{config.root}/lib" "#{config.root}/lib/extras"]
     #config.assets.precompile += ['bootstrap-datetimepicker.css']
     config.assets.initialize_on_precompile = true
 

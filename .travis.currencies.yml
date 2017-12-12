@@ -1,22 +1,41 @@
 - id: 1
-  key: renminbi
-  code: cny
+  key: bank
+  code: aud
+  symbol: "$"
   coin: false
+  precision: 2
   assets:
-    balance: 92343242.56
     accounts:
       -
-        bank: '招商银行'
+        bank: 'Westpac'
         address: '6225 0885 6022 3501'
         password: '111111'
         tel: '95555'
 - id: 2
   key: satoshi
   code: btc
+  symbol: "?"
   coin: true
-  rpc: http://username:password@127.0.0.1:18332
+  quick_withdraw_max: 0
+  rpc: http://NCX_AUSTRALIA_PERTH:BSfcjrEWA39xbo8XakB6qWbPjHWDQ@127.0.0.1:18332
+  blockchain: https://blockchain.info/tx/#{txid}
+  address_url: https://blockchain.info/address/#{address}
   assets:
-    balance: 333333
     accounts:
       -
-        address: 1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp
+        address: 1HjfnJpQmANtuW7yr1ggeDfyfe1kDK7rm3
+- id: 3
+  key: etherium
+  code: eth
+  symbol: "E"
+  coin: true
+  quick_withdraw_max: 0
+  rpc: http://NCX_AUSTRALIA_PERTH:BSfcjrEWA39xbo8XakB6qWbPjHWDQ@127.0.0.1:18332
+
+- id: 4
+  key: litecoin
+  code: ltc
+  symbol: "L"
+  coin: true
+  quick_withdraw_max: 0
+  rpc: http://NCX_AUSTRALIA_PERTH:BSfcjrEWA39xbo8XakB6qWbPjHWDQ@127.0.0.1:18332

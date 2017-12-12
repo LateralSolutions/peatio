@@ -6,7 +6,8 @@ module APIv2
     end
 
     def redis
-      @r ||= KlineDB.redis
+      p @r 
+      @r ||= KlineDB.redis      
     end
 
     def current_user

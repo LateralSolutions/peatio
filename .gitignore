@@ -47,3 +47,14 @@ tags
 .ruby-version
 .DS_Store
 .agignore
+
+out.*
+.out
+.log
+
+**/*.backup
+
+nohup.out
+
+.sass-cache
+node_modules/

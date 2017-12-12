@@ -1,10 +1,11 @@
 header.navbar.navbar-default.navbar-static-top role = "navigation"
   .container-fluid
     ul#menu.nav.navbar-nav.navbar-left
+      a.navbar-brand.NCX_icon_x100 href=root_path              
+      a.navbar-brand.ncx-logo-text href=root_path NCX              
+
       a.navbar-brand href=root_path
-        | PEATIO
-        | &nbsp;
-        = @market.name
+        = @market.name 
 
       p.navbar-text
         span data-title="#{t('.vol')}"

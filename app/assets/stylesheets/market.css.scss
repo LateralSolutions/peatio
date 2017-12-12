@@ -48,8 +48,30 @@ body {
     cursor: pointer;
     text-decoration: none;
   }
+  line-height:21px;
+  font-weight:400;
 }
-
+.NCX_icon_x100 {
+    background-image: url('/NCX_icon_x100.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+	min-width: 30px;
+	min-height: 30px;
+	max-height: 50px;
+    max-width: 50px;
+    position: relative;
+    top: 10px;
+    margin-left: 10px !important;
+	margin-right: 5px;
+    text-align: center;
+ }
+.ncx-logo-text {
+    font-size: 35px;
+    margin-left: 5px;
+    font-weight: 700;
+    color: #333 !important;
+}
 header {
   box-sizing: border-box;
   bottom-border: 0px;
@@ -102,7 +124,7 @@ header {
 
   li.dropdown {
     a:hover {
-      color: white;
+      color: #000000;
       text-decoration: none;
       background: none;
       text-shadow: white 0 0 2px;
@@ -224,7 +246,7 @@ header {
   height: 100%;
   position: absolute;
   font-size: 14px !important;
-  background-color: #000;
+  background-color: #00A07A;
   font-family: $font-family-monospace;
 }
 
@@ -258,7 +280,7 @@ header {
     width: auto;
     position: absolute;
 
-    li > a { background: #000; }
+    li > a { background: #00A07A; }
 
     &.tabs-left {
       left: 3px;
@@ -310,7 +332,7 @@ header {
 .panel {
   position: absolute;
   margin-bottom: 0px;
-
+  background-color: #00A07A;
   &.panel-wide {
     .panel-body { padding: 8px; }
     .panel-heading { padding: 8px; }
@@ -376,7 +398,7 @@ header {
       }
 
       a:hover {
-        color: white;
+        color: #000000;
         background-color: $panel-bg;
         text-shadow: white 0 0 2px;
         text-decoration: none;
@@ -429,13 +451,13 @@ header {
 
       a.active {
         i {
-          color: white;
+          color: #000000;
           text-shadow: white 0 0 2px;
         }
       }
 
       a:hover {
-        color: white;
+        color: #000000;
         background-color: $panel-bg;
         text-shadow: white 0 0 2px;
         text-decoration: none;
@@ -464,12 +486,14 @@ header {
 /* layout position
 ----------------------------------------------- */
 #ask_entry, #bid_entry { width: $entry-width; height: $entry-height; }
-.entry-right { bottom: $gutter; right: $gutter + $entry-width + $gutter; }
-.entry-left { bottom: $gutter; right: $gutter; }
+.entry-right { top: $gutter + $market-list-height; left: $gutter  }
+.entry-left { top: $gutter + $market-list-height + $entry-height; left: $gutter; }
 
 #ticker {
+  position:absolute;
   width: $ticker-width; height: $ticker-height;
-  bottom: $gutter_4x + $entry-height + $my-orders-height + $depths-height; right: $gutter;
+  bottom: $depths-height + $gutter;
+  left: $left-column-width + $order-book-width + $gutter;
 
   .ask, .last, .bid {
     text-align: center;
@@ -487,10 +511,10 @@ header {
 #order_book {
   width: $order-book-width; height: $order-book-height;
   min-height: $order-book-height;
-  top: $gutter; right: $gutter;
+  top: $gutter; left: $gutter + $market-list-width;
 
   .panel-body-content {
-    min-height: $order-book-height - $panel_table_header_high;
+    min-height: ($order-book-height - $panel_table_header_high) /2;
   }
 
   table.asks, table.bids {
@@ -504,13 +528,19 @@ header {
       .price, .amount, .volume, g { color: #444; }
     }
   }
+  .panel-orderbook-bottom{
+  	height: $order-book-height / 2;
+  }
+  panel-orderbook-top {
+  	height: $order-book-height / 2;
+  }
 }
 
 #candlestick {
   position: absolute;
   min-width: $candlestick-width; width: $candlestick-width;
   min-height: $candlestick-height; height: $candlestick-height;
-  top: $gutter; left: $market-list-width + $gutter-2x;
+  top: $gutter; left: $market-list-width + $order-book-width + $gutter-2x;
 }
 
 .switch {
@@ -531,8 +561,9 @@ header {
 }
 
 #depths_wrapper {
-  width: $order-book-width; height: $depths-height;
-  bottom: $gutter-3x + $my-orders-height + $entry-height; right: $gutter;
+  position: absolute;
+  width: $candlestick-width; height: $depths-height;
+  bottom: $gutter;  left: $left-column-width + $order-book-width + $gutter;
 
   .panel-body {
     padding: 0;
@@ -549,14 +580,14 @@ header {
   .dropdown-wrapper {
     position: absolute;
     height: 100px;
-    top: $market-list-height + $gutter-3x; left: $market-trades-width + $gutter;
+    top: $market-list-height + $gutter-3x; right: $market-trades-width + $gutter;
     z-index: 998;
   }
 }
 
 #market_trades {
   position: absolute;
-  bottom: $gutter; left: $gutter;
+  top: $gutter; right: $gutter;
   width: $market-trades-width;
   height: $market-trades-height;
   min-height: $market-trades-height;
@@ -626,13 +657,14 @@ header {
   .dropdown-wrapper {
     position: absolute;
     height: $my-orders-height;
-    bottom: $gutter-2x + $entry-height; right: $order-book-width + $gutter;
+    bottom: $gutter; 
+    left: $gutter;
   }
 }
 
 #my_orders {
   width: $my-orders-width; height: $my-orders-height;
-  bottom: $gutter-2x + $entry-height; right: $gutter;
+  bottom: $gutter; left: $gutter;
 
   .panel-body-content {
     height: $my-orders-height - $gutter-2x;
@@ -766,7 +798,10 @@ header {
 /* order-book trades my-orders table
 ---------------------------------------------------*/
 .col-left { padding-right: 12px; }
-.panel-body-head { border-bottom: 1px solid #333; }
+.panel-body-head { 
+	color: #ffffff !important;
+	background-color: #008768;
+}
 
 #ticker, #order_book, #market_trades, #my_orders, #market_list {
   table {
@@ -793,7 +828,7 @@ header {
 }
 
 table {
-  thead { cursor: default; th { color: #777; }}
+  thead { cursor: default; th { color: #fff; }}
   &.table-hover { tbody > tr:hover { cursor: pointer;} }
 }
 
@@ -807,7 +842,7 @@ table {
 }
 
 .chart-ticker {
-  color: #777;
+  color: #fff;
   background-color: $panel-bg-alpha;
   border: 1px solid $navbar-default-border;
   padding: 6px 0 6px 6px;

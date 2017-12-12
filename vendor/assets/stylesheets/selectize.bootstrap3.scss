@@ -9,10 +9,10 @@ $selectize-color-highlight: rgba(255, 237, 40, .4);
 $selectize-color-input: $input-bg;
 $selectize-color-input-full: $input-bg;
 $selectize-color-disabled: $input-bg;
-$selectize-color-item: #efefef;
+$selectize-color-item: $text-color;
 $selectize-color-item-border: rgba(0, 0, 0, 0);
 $selectize-color-item-active: $component-active-bg;
-$selectize-color-item-active-text: #fff;
+$selectize-color-item-active-text: #000;
 $selectize-color-item-active-border: rgba(0, 0, 0, 0);
 $selectize-color-optgroup: $dropdown-bg;
 $selectize-color-optgroup-text: $dropdown-header-color;
@@ -97,8 +97,8 @@ $selectize-arrow-offset: $selectize-padding-x + 5px;
     }
 
     &.focus {
-        $color: $input-border-focus;
-        $color-rgba: rgba(red($color), green($color), blue($color), .6);
+        /*$color: $input-border-focus;
+        $color-rgba: rgba(red($color), green($color), blue($color), .6);*/
         border-color: $color;
         outline: 0;
         @include selectize-box-shadow(#{inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba});

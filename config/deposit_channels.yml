@@ -6,11 +6,22 @@
   max_confirm: 3
 - id: 400
   key: bank
-  currency: cny
-  sort_order: 2
+  currency: aud
+  sort_order: 4
   bank_accounts:
-    -
-      bank: 'Your Bank Name'
-      branch: 'Your Bank Branch'
-      holder: 'Your Account Holder'
-      account: 'Your Account Number'
+    - bank: 'Westpac Banking Corporation'
+      branch: 'Subiaco'
+      holder: 'Thushara Weerakody'
+      account: '114526'
+- id: 500
+  key: etherium
+  currency: eth
+  sort_order: 2
+  min_confirm: 1
+  max_confirm: 3
+- id: 600
+  key: litecoin
+  currency: ltc
+  sort_order: 3
+  min_confirm: 1
+  max_confirm: 3

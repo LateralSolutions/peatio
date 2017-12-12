@@ -272,23 +272,7 @@ en:
           sum: limit sum price %{l} ~ %{h}
           precision: minimum precision %{p}
   banks:
-    icbc: Industryand Commercial Bank of China
-    cbc: Construction Bank of China
-    bc: Bank of China
-    bcm: Bank of Communications
-    abc: Agriculture Bank of China
-    cmb: China Merchants Bank Ltd
-    cmbc: China Minsheng Banking Co., Ltd
-    cncb: China CITIC Bank
-    hxb: Hua Xia Bank Co., Ltd.
-    cib: Industrial Bank Co., Ltd
-    spdb: Shanghai Pudong Development Bank
-    bob: Bank of Beijing
-    ceb: China Everbright Bank CO.LTD
-    sdb: Shenzhen Development Bank
-    pab: Ping An Bank Co., Ltd.
-    gdb: Guangdong Development Bank
-    psbc: Postal Savings Bank of China
+    wbc: Westpac Banking Corporation
   market:
     currency:
       btc: BTC
@@ -296,6 +280,7 @@ en:
       doge: DOGE
       pts: PTS
       ltc: LTC
+      eth: ETH
   currency:
     satoshi:
       key: BTC
@@ -321,6 +306,16 @@ en:
       key: PTS
       code: PTS
       name: Protoshare
+      format: '0,0.0000'
+    etherium:
+      key: ETH
+      code: ETH
+      name: Etherium
+      format: '0,0.0000'
+    litecoin:
+      key: LTC
+      code: LTC
+      name: Litecoin
       format: '0,0.0000'
   datagrid:
     empty: no data found
@@ -463,7 +458,7 @@ en:
     satoshi:
       key: Block Chain
       title: Bitcoin Deposits
-      intro: Deposit bitcoin from your own wallet address to Peatio account
+      intro: Deposit bitcoin from your own wallet address to NCX account
       latency: 1 confirmation
       transfer: Manual
       go: Deposit
@@ -621,7 +616,7 @@ en:
       view_open_tickets: View open tickets
     account_versions:
       index:
-        description: Every transaction and every penny of income in Peatio are well
+        description: Every transaction and every penny of income in NCX are well
           documented and exhaustive.
     api_tokens:
       user_tokens:
@@ -701,8 +696,8 @@ en:
         intro: All of exchange's CNY assets are listed here.
         total: Total CNY Assets
         description: " <p>For supervision, you can inquiry the balance of our deposit
-          account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
-          Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+          account:</p> <p>Bank: %{bank}</p> <p>Account? %{address}</p> <p>Inquiry
+          Password? %{password}</p> <p>Inquiry Tel.? %{tel}</p>"
       partial_tree:
         success: 'Success! Verification data generated at: %{timestamp}'
     funds:
@@ -753,7 +748,7 @@ en:
         help_panel: Help
         done: DONE
         cancel: CANCEL
-        cancel_confirm: Are your sure cancel order?
+        cancel_confirm: Are your sure you wish to cancel order?
         confirm: CONFIRM
         ask_order: 'ASK ##sn#'
         bid_order: 'BID ##sn#'
@@ -830,13 +825,14 @@ en:
         my_html: "<i class='fa fa-check'></i><span>Mine</span>"
         time: Time
         price: Price
-        volume: Volume
+        volume: Amount
+        label: Live Trades
       header:
         network: Connection State
-        vol: 24h Volume
+        vol: 24 hour volume
         high: High
         low: Low
-        change: Change
+        change: 24 hour price
       settings:
         sound: Sound
         notification: Notify
@@ -859,16 +855,16 @@ en:
         clear_all_html: "<i class='fa fa-trash'></i><span>Cancel All</span>"
         clear_bids_html: "<i class='fa fa-trash'></i><span>Cancel Bids</span>"
         clear_asks_html: "<i class='fa fa-trash'></i><span>Cancel Asks</span>"
-        confirm_clear_all: Are you sure to cancel ALL orders?
-        confirm_clear_bids: Are you sure to cancel all BIDS?
-        confirm_clear_asks: Are you sure to cancel all ASKS?
+        confirm_clear_all: Are you sure you wish to cancel ALL orders?
+        confirm_clear_bids: Are you sure you wish to cancel all BIDS?
+        confirm_clear_asks: Are you sure you wish to cancel all ASKS?
         price: Price
         volume: Volume
         amount: Amount
         time: Place Time
       mask:
-        warning: Please <a class=text-up href='/'>Sign up</a> or <a class=text-up
-          href='/'>Sign in</a> for operation
+        warning: <a class=text-up href='/signup'>Sign up</a> / <a class=text-up
+          href='/signin'>Sign in</a>
       klime_chart:
         title: Candlestick Charts
       global:
@@ -1016,15 +1012,15 @@ en:
       panel: Login
       new:
         title: Login my account
-        intro: Login Peatio now for you to exchange.
+        intro: Login NCX now for you to exchange.
       failure:
         title: Login my account
-        intro: Login Peatio now for you to exchange.
+        intro: Login NCX now for you to exchange.
     identities:
       panel: Create Account
       new:
         title: Create My Account
-        intro: This will be your only ID on Peatio which is necessary for your exchange
+        intro: This will be your only ID on NCX which is necessary for your exchange
           , deposit and withdrawal . please fill it out carefully.
       edit:
         panel: My Account
@@ -1040,7 +1036,7 @@ en:
         email: E-mail Address
         password: Password
       identity:
-        email: Example：xiaobai@example.com
+        email: Example?xiaobai@example.com
         password: Please set your login password
         password_confirmation: Confirm your password
         edit:
@@ -1055,7 +1051,7 @@ en:
         origin_volume: Sell Volume
         sum: Total Turnover
       reset_password:
-        email: For example：xiaobai@example.com
+        email: For example?xiaobai@example.com
         password: Please set your login password!
       withdraw:
         bank:
@@ -1261,7 +1257,7 @@ en:
       trade: Submit and cancel orders
     authorizations:
       new:
-        title: Peatio Application Authorization
+        title: NCX Application Authorization
         authorize_html: Authorize <strong class='text-info'>%{name}</strong> to use
           your account?
         scopes: 'This application will be able to:'
@@ -1396,41 +1392,41 @@ en:
 
   mailer:
     dear_user: Dear user,
-    signature: Thanks,<br/>The Peatio Team
+    signature: Thanks,<br/>The NCX Team
     please_contact: If it's not you, please <a href='mailto:%{contact_mail}'>contact us</a> ASAP.
     footer: This is an automatically generated email, please do not reply, if you have any question, please <a href="mailto:%{contact_mail}">contact us</a>.
   comment_mailer:
     admin_notification:
-      subject: "[PEATIO] User reply a ticket"
+      subject: "[NCX] User reply a ticket"
       notification_content: User %{email} reply a ticket, please follow the link below to see the detail
     user_notification:
-      subject: "[PEATIO] Your ticket got a new reply"
+      subject: "[NCX] Your ticket got a new reply"
       notification_content: 'Your ticket got a new reply, please follow the link below to see the detail:'
   deposit_mailer:
     accepted:
-      subject: "[Peatio] Your deposit has been credited into your account"
+      subject: "[NCX] Your deposit has been credited into your account"
       content: Your %{currency} deposit has been credited into your account.
   member_mailer:
     notify_signin:
-      subject: "[PEATIO] You have just signed in"
+      subject: "[NCX] You have just signed in"
       just_signed_in: You have just signed in.
     google_auth_activated:
-      subject: "[PEATIO] Google authenticator activated"
+      subject: "[NCX] Google authenticator activated"
       google_auth_activated: You have activated google authenticator successfully
     google_auth_deactivated:
-      subject: "[PEATIO] Google authenticator deactivated"
+      subject: "[NCX] Google authenticator deactivated"
       google_auth_deactivated: You have deactivated google authenticator successfully
     sms_auth_activated:
-      subject: "[PEATIO] SMS authenticator activated"
+      subject: "[NCX] SMS authenticator activated"
       sms_auth_activated: You have activated SMS authenticator successfully
     sms_auth_deactivated:
-      subject: "[PEATIO] SMS authenticator deactivated"
+      subject: "[NCX] SMS authenticator deactivated"
       sms_auth_deactivated: You have deactivated SMS authenticator successfully
     reset_password_done:
-      subject: "[PEATIO] Your password changed"
+      subject: "[NCX] Your password changed"
       successful: Your password has been changed successfully.
     phone_number_verified:
-      subject: "[PEATIO] Your phone number verified"
+      subject: "[NCX] Your phone number verified"
       verified: 'Your phone number verified: %{phone_number}'
   system_mailer:
     daily_stats:
@@ -1443,39 +1439,39 @@ en:
       trades_change_total: Trades Changes Total
   ticket_mailer:
     admin_notification:
-      subject: "[PEATIO] User created a new ticket"
+      subject: "[NCX] User created a new ticket"
       admin_notification_content: User %{email} created a new ticket, please follow the link below to see the detail
     author_notification:
-      subject: "[PEATIO] Thank you for submit ticket"
+      subject: "[NCX] Thank you for submit ticket"
       thanks_for_submit_ticket: Thank you for submit ticket to us, we will get back to you as soon as possible.
   token_mailer:
     activation:
-      subject: "[Peatio] Account Activation"
-      click_to_verify: 'Thank you for signing up on Peatio, please follow this link to verify your Email:'
+      subject: "[NCX] Account Activation"
+      click_to_verify: 'Thank you for signing up on NCX, please follow this link to verify your Email:'
       unable_to_click: Copy and open the link in your browser if you are unable to click and visit it.
       link_expire: The link expires in 30 minutes.
     reset_password:
-      subject: "[Peatio] Please Reset Your Password"
+      subject: "[NCX] Please Reset Your Password"
       hi: Hi,
       follow_the_link: 'Please follow this link to reset your password within 30 minutes:'
   withdraw_mailer:
     submitted:
-      subject: "[Peatio] Your withdraw state update"
+      subject: "[NCX] Your withdraw state update"
       content: The request of your %{currency} withdrawal has been successfully submitted, We will process it as soon as possible. Please be patient with us. Contact us if you have any questions.
     processing:
-      subject: "[Peatio] Your withdraw state update"
+      subject: "[NCX] Your withdraw state update"
       content: The request of your %{currency} withdrawal is in process. Please be patient with us. Contact us if you have any questions.
     done:
-      subject: "[Peatio] Your withdraw state update"
+      subject: "[NCX] Your withdraw state update"
       content: The request of your %{currency} withdrawal is complete. Please check it out. Contact us if you have any questions.
     withdraw_state:
-      subject: "[Peatio] Your withdraw state update"
+      subject: "[NCX] Your withdraw state update"
       your_state: 'Your withdrawal state: '
 
   'true': true
   'false': false
   view_on_github: View on Github
-  slogan: An open-source crypto-currency exchange for world.
+  slogan: Haha, now we know how to customise this thing.
   tags:
     vip: VIP
     hero: Hero Member
@@ -1489,11 +1485,11 @@ en:
   gon:
     ask: Ask
     bid: Bid
-    brand: Peatio Exchange
+    brand: NCX National Currecny eXchange
     notification:
-      title: Peatio Exchange
+      title: NCX Exchange
       enabled: Notification enabled.
-      new_trade: "%{kind} order#%{id} executed at %{price} %{quote_unit} for %{volume} %{base_unit}。"
+      new_trade: "%{kind} order#%{id} executed at %{price} %{quote_unit} for %{volume} %{base_unit}?"
   back: Back
   invalid_password: Invalid password
   all: All
@@ -1637,11 +1633,11 @@ en:
         create: Submit
   activations:
     new:
-      notice: An email has been sent to your mailbox, please check it for verification as soon as possible. If you do not received it , please click "send it again" button.
+      notice: An email has been sent to your mailbox, please check it for verification as soon as possible. If you do not receive it , please click "send" button.
       verified: Your email adress has been verified successfully.
       login_required: login required!
       tip: Activation link was sent to %{email}
-      spam: Please check your spam folder for the activation link.
+      spam: If you cna not locate the activation link please check your spam folder.
     edit:
       notice: Account activated successfully! Please sign in below.
       alert: Activation link is expired or invalid.
@@ -1656,7 +1652,7 @@ en:
     weibo:
       destroy:
         last_auth_alert: You couldn't delete the last authentication
-        unbind_success: Unbind from the Weibo
+        unbind_success: Unbind from Weibo
     identities:
       new:
         title: Setup The Password
@@ -1698,9 +1694,9 @@ en:
     application:
       close: Close
     meta:
-      page_title: Peatio - The Opensource Cryptocurrency Exchange
-      page_description: Peatio - The Opensource Cryptocurrency Exchange
-      page_keywords: Peatio,Opensource,Exchange,Cryptocurrency
+      page_title: NCX - National Currency eXchange
+      page_description: NCX - National Currency eXchange
+      page_keywords: NCX - National Currency eXchange,Exchange,Cryptocurrency
   members:
     edit:
       name: Please fill out the application.
@@ -1743,9 +1739,9 @@ en:
         account_info: Account Info
         payment_address: Deposit Address
     alert:
-      modern: In order not to affect trading experience, please use a more popular
-        browser transaction, we recommend you <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google
-        Chrome</a>。
+      modern: In order not to affect trading experience, please use a more up to date
+        browser, we recommend you <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google
+        Chrome</a>?
       pusher_unavailable: The network connection is temporarily unavailable... <a
         href='#' class='alert-link'>Please refresh</a>.
     header:
@@ -1784,7 +1780,7 @@ en:
       edit:
         submit: Disable
         warning: 'Tip: If you have lost your Two-Factor Authentication by some reason
-          and can''t login your Peatio account, please contact our online customer
+          and can''t login your NCX account, please contact our online customer
           service.'
       show:
         step-1: Step 1
@@ -1794,8 +1790,8 @@ en:
         download-app: Install Google Authenticator app on your smart phone and open
           it.
         guide-link: "<a href='https://support.google.com/accounts/answer/1066447'
-          target='_blank'>Installation Instructions</a>。"
-        scan-qr-code: Scan the following QR code with Google Authenticator APP，or
+          target='_blank'>Installation Instructions</a>?"
+        scan-qr-code: Scan the following QR code with Google Authenticator APP?or
           add cipher text to the validator manually.
         enter-passcode: Fill in the dynamic password  displayed by your phone to activate Two-Factor Authentication.
         submit: Enable
@@ -1834,7 +1830,7 @@ en:
     bank:
       key: Bank Transfer
       title: Bank Transfer
-      intro: Bank transfer deposits, Recommend for large recharge
+      intro: Bank transfer deposits, Recommended for larger recharges
       latency: 30 minutes
       transfer: Manual
       go: Withdraw

@@ -9,7 +9,7 @@ end
 Peatio::Application.routes.draw do
   use_doorkeeper
 
-  root 'welcome#index'
+  root 'welcome#start'
 
   if Rails.env.development?
     mount MailsViewer::Engine => '/mails'

@@ -1,0 +1,11 @@
+- unless @one_etheriums.empty?
+  .panel.panel-primary
+    .panel-heading: span = t('.one')
+    = render partial: 'table', locals: {etheriums: @one_etheriums}
+- unless @all_etheriums.empty?
+  .panel.panel-success
+    .panel-heading: span = t('.all')
+    = render partial: 'table', locals: {etheriums: @all_etheriums}
+
+- if @all_etheriums.empty? and @one_etheriums.empty?
+  h3.text-info.text-center = t('.empty')

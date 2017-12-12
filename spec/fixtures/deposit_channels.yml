@@ -6,11 +6,11 @@
   max_confirm: 3
 - id: 400
   key: bank
-  currency: cny
+  currency: aud
   sort_order: 2
   bank_accounts:
     -
-      bank: 'Your Bank Name'
-      branch: 'Your Bank Branch'
-      holder: 'Your Account Holder'
-      account: 'Your Account Number'
+      bank: 'Westpac Banking Corporation'
+      branch: 'Subiaco'
+      holder: 'NCX Australia Holdings'
+      account: '633-000 12345'

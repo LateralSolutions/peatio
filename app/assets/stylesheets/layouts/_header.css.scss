@@ -40,6 +40,7 @@ header {
       top: 11px;
       left: -6px;
   }
+  
 }
 
 /* account balance summary with header
@@ -63,7 +64,7 @@ header .account-balance {
   }
 
   i.fa, span.total-title {
-    color: $gray-light;
+    color: #000000;
   }
 
   i.fa.fa-plus {

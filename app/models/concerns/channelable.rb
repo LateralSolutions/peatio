@@ -8,7 +8,8 @@ module Channelable
   end
 
   def kls
+     Rails.logger.debug "CLASS CATEGORY: #{self.class.category}"
     "#{self.class.category}/#{key}".camelize.constantize
   end
 
-end
+end 

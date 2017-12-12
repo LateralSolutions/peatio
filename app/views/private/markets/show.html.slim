@@ -24,10 +24,11 @@ html lang="en"
         = render partial: 'market_list'
 
         = render partial: 'candlestick'
+        = render partial: 'ticker'
         = render partial: 'range_switch'
         = render partial: 'indicator_switch'
 
-        - if ENV['CHAT_FEATURE']
+        - if ENV['CHAT_FEATURE'] 
           #chat_tabs_wrapper.float
             ul.nav.nav-tabs.tabs-right.sideways
               li: a href='#chat_content' data-toggle='tab' = t('.chat')
@@ -37,7 +38,6 @@ html lang="en"
 
         = render partial: 'order_book'
         = render partial: 'depths'
-        = render partial: 'ticker'
         = render partial: 'ask_entry', locals: {market: @market, order: @order_ask }
         = render partial: 'bid_entry', locals: {market: @market, order: @order_bid }
         = render partial: 'my_orders'

@@ -1,6 +1,9 @@
 .tabbable
   ul.nav.nav-tabs
     li.active: a.btc-proof href="#btc-proof" data-toggle="tab" == t('.verify-btc')
+    li:        a.eth-proof href="#eth-proof" data-toggle="tab" == t('.verify-eth')
+    li:        a.ltc-proof href="#ltc-proof" data-toggle="tab" == t('.verify-ltc')
+    li:        a.aud-proof href="#aud-proof" data-toggle="tab" == t('.verify-aud')
     li:        a.cny-proof href="#cny-proof" data-toggle="tab" == t('.verify-cny')
 
   .tab-content
@@ -12,6 +15,30 @@
           = @btc_proof.sum
       = render 'liability_data', account: @btc_account, proof: @btc_proof
 
+    #eth-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.eth-assets-total')
+        span.currency
+          == t("currency.icon.eth")
+          = @eth_proof.sum
+      = render 'liability_data', account: @eth_account, proof: @eth_proof
+      
+    #ltc-proof.tab-pane.active: .trade-wrapper
+            .assets
+              span.title = t('.ltc-assets-total')
+              span.currency
+                == t("currency.icon.ltc")
+                = @ltc_proof.sum
+      = render 'liability_data', account: @ltc_account, proof: @ltc_proof
+      
+    #aud-proof.tab-pane.active: .trade-wrapper
+            .assets
+              span.title = t('.aud-assets-total')
+              span.currency
+                == t("currency.icon.aud")
+                = @aud_proof.sum
+      = render 'liability_data', account: @aud_account, proof: @aud_proof
+      
     #cny-proof.tab-pane:        .trade-wrapper
       .assets
         span.title = t('.cny-assets-total')

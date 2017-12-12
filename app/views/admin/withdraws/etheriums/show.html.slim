@@ -1,0 +1,30 @@
+.row
+  .col-xs-12
+    .panel.panel-primary
+      .panel-heading
+        span = t('.withdraw', sn: @etherium.id)
+      .panel-body
+        = description_for :withdraw do
+          = item_for @etherium, :id
+          = item_for @etherium, :created_at
+          = item_for @etherium, :aasm_state_text
+          hr.split
+          = item_for @etherium.member, :name
+          = item_for @etherium, :fund_extra
+          = item_for @etherium, :fund_uid do
+            span = @etherium.fund_uid.truncate(22)
+          = item_for @etherium, :amount
+          hr.split
+          = item_for @etherium, :remark
+          hr.split
+          ul.list-inline.pull-right
+            - if @etherium.may_reject?
+              li
+                = link_to t('.reject'), url_for([:admin, @etherium]), class: 'btn btn-danger', method: 'DELETE', confirm: t('.reject_confirm')
+            - if @etherium.may_process?
+              li
+                = link_to t('.process'), url_for([:admin, @etherium]), class: 'btn btn-primary', method: 'PATCH'
+
+  .col-xs-12
+    = render partial: 'shared/admin/member', locals: {member: @etherium.member}
+    = render partial: 'shared/admin/account', locals: {account: @etherium.account}
